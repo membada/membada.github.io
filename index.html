@@ -1,30 +1,210 @@
-<html>
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Product Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        /* Reset & Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+        }
+        .tab-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+        }
+        .tab-links li {
+            margin: 0;
+        }
+        .tab-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: 0.3s;
+        }
+        .tab-links a:hover, .tab-links a.active {
+            background: #00bcd4;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1, h2 {
+            color: #00bcd4;
+            margin-bottom: 20px;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        a {
+            color: #00bcd4;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
 </head>
-
 <body>
-  <h1>New Awesome Product</h1>
-  <img src="https://blob.sololearn.com/courses/np.png">
-  <!-- explanation of the core product-->
-  <p>Introducing our <strong>latest product</strong>, designed to make your life <em>easier</em> and <u>more efficiant.</u></p>
-  <ul>
-    <li>Feature 1</li>
-    <li>Feature 2</li>
-    <li>Feature 3</li>
-  </ul>
-  <form>
-    <h2>Order now!</h2>
 
-    <label>Name:</label>
-    <input type="text" id="nm"><br>
-    <br>
-    <label>Email:</label>
-    <input type="text" id="em"><br>
-    <br>
-    <button>Submit</button>
-  </form>
+    <header>
+        <h1>My Awesome Website</h1>
+    </header>
+
+    <nav>
+        <ul class="tab-links">
+            <li><a href="#home" class="active" onclick="openTab(event, 'home')">Home</a></li>
+            <li><a href="#about" onclick="openTab(event, 'about')">About</a></li>
+            <li><a href="#services" onclick="openTab(event, 'services')">Services</a></li>
+            <li><a href="#portfolio" onclick="openTab(event, 'portfolio')">Portfolio</a></li>
+            <li><a href="#contact" onclick="openTab(event, 'contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="tab-content">
+        <!-- Home Tab -->
+        <div id="home" class="tab-pane active">
+            <h2>Welcome to My Website!</h2>
+            <p>This is a fully functional tabbed website made with pure HTML, CSS, and a little JavaScript.</p>
+            <p>Click the tabs above to navigate between sections.</p>
+            <p>Useful hyperlinks:</p>
+            <ul>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+                <li><a href="mailto:you@example.com">Email Me</a></li>
+            </ul>
+        </div>
+
+        <!-- About Tab -->
+        <div id="about" class="tab-pane">
+            <h2>About Me</h2>
+            <p>I'm a web developer who loves creating clean and beautiful websites using modern technologies.</p>
+            <p>Skills: HTML, CSS, JavaScript, React, Node.js, and more!</p>
+            <p>Download my resume: <a href="resume.pdf" download>resume.pdf</a></p>
+        </div>
+
+        <!-- Services Tab -->
+        <div id="services" class="tab-pane">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Web Design & Development</li>
+                <li>Responsive Mobile-Friendly Sites</li>
+                <li>E-commerce Solutions</li>
+                <li>SEO Optimization</li>
+                <li>Website Maintenance</li>
+            </ul>
+            <p><a href="#contact">Contact us</a> for a free quote!</p>
+        </div>
+
+        <!-- Portfolio Tab -->
+        <div id="portfolio" class="tab-pane">
+            <h2>Portfolio</h2>
+            <p>Some of my recent projects:</p>
+            <ul>
+                <li><a href="https://example.com/project1" target="_blank">Project 1 - Online Store</a></li>
+                <li><a href="https://example.com/project2" target="_blank">Project 2 - Company Website</a></li>
+                <li><a href="https://example.com/project3" target="_blank">Project 3 - Personal Blog</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Tab -->
+        <div id="contact" class="tab-pane">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p>Follow me:</p>
+            <p>
+                <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a> | 
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Awesome Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab panes
+            const tabPanes = document.getElementsByClassName("tab-pane");
+            for (let i = 0; i < tabPanes.length; i++) {
+                tabPanes[i].classList.remove("active");
+            }
+
+            // Remove active class from all links
+            const tabLinks = document.getElementsByClassName("tab-links")[0].getElementsByTagName("a");
+            for (let i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+
+            // Show current tab and add active class to clicked link
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Allow opening tabs via URL hash (e.g., index.html#contact)
+        window.addEventListener("hashchange", function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const link = document.querySelector(`a[href="#${hash}"]`);
+                if (link) link.click();
+            }
+        });
+
+        // On page load, check if there's a hash
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            const link = document.querySelector(`a[href="#${hash}"]`);
+            if (link) link.click();
+        }
+    </script>
 </body>
-
 </html>
